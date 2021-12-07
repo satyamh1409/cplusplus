@@ -1,0 +1,25 @@
+include<iostream>
+using namespace std:
+
+class A {
+public:
+int k;
+};
+
+class B {
+public:
+int k;
+};
+
+class C :public A, public B{
+};
+
+int main()
+{
+c objc;
+objc.B::k =10; //This will show ambigity since we have not soecified which class variable "A" is.
+               //to resolve this we need to use SRD operator.
+cout << "K value when called with object of C is : '<< objc.B::k<< endl;
+cout << "K value when called with object of A is : '<< objc.A::k<< endl;
+}
+
